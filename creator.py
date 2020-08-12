@@ -21,15 +21,12 @@ class AudioVideo:
 
         self.media = os.path.join(d, media)
         self.audio = os.path.join(d, audio)
-        print(self.media)
 
         self.a = AudioFileClip(self.audio)
 
         if ".mov" in self.media or ".mp4" in self.media:
-            print(self.a.duration)
             self.v = VideoFileClip(self.media).set_duration(self.a.duration + 0.1)
         else:
-            print(self.a.duration)
             self.v = ImageClip(self.media).set_duration(self.a.duration + 0.1)
 
         self.f = self.v.set_audio(self.a)
