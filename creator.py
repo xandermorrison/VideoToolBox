@@ -83,11 +83,18 @@ class AudioVideo:
             #],
         )
 
-        self.f.close()
+        self.close_video()
 
     def close_video(self):
 
         self.f.close()
+        self.a.close()
+
+        if self.t.lower() == "y":
+            self.temp_i.close()
+            self.temp_v.close()
+        else:
+            self.v.close()
 
 
 if __name__ == "__main__":
