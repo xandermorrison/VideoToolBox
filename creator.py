@@ -90,10 +90,7 @@ class AudioVideo:
         self.f.close()
         self.a.close()
 
-        if self.t.lower() == "y":
-            self.temp_i.close()
-            self.temp_v.close()
-        else:
+        if self.t.lower() != "y":
             self.v.close()
 
 
